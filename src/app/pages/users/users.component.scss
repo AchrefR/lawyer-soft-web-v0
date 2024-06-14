@@ -1,0 +1,74 @@
+.-btn{
+  width: 70px;
+}
+.-add-btn{
+  width: 150px;
+}
+.modal-header{
+  padding-left: 30px;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+.modal-content{
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.modal-footer{
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.modal-backdrop.show {
+  backdrop-filter: blur(10px);
+}
+.view-user-detail-container{
+  background: #f5f5f5;
+}
+.view-user-detail-container-header{
+  margin-top: 0px;
+}
+.view-user-detail-container-content{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.-margin{
+  margin-bottom: 20px;
+}
+
+.-margin-title{
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.mt-4{
+  margin-top: 0px;
+}
+.mb-1{
+  margin-bottom: 0px;
+}
+.--margin{
+  margin-bottom: 10px;
+}
+.--title{
+  margin-bottom: 40px;
+}
+.accesses-checks-label{
+  font-size: 11px;
+  font-weight: inherit;
+}
+.addAgent-div{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.hr {
+  margin-top: 20px;
+  border: none;
+  height: 0.1px;
+  background-color: #e7e7e7;
+  padding: 0px;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid darkred;
+}
+.valid-message{
+  color: darkred;
+}
