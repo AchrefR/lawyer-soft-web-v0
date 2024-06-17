@@ -70,8 +70,6 @@ export class UsersComponent implements OnInit {
             this.allLawyers = result;
 
         })
-
-
     }
 
     openAgentModal(template: TemplateRef<void>) {
@@ -145,7 +143,6 @@ export class UsersComponent implements OnInit {
                 this.successmsg();
             })
             this.submitted=false;
-
         }
 
     }
@@ -178,10 +175,10 @@ export class UsersComponent implements OnInit {
 
         this.modalRef = this.modalService.show(template, {});
         this.editAgentForm = this.formBuilder.group({
-            firstName: [user.firstName],
-            lastName: [user.lastName],
-            email: [user.email],
-            lawyer: [this.lawyerChose],
+            firstName: [user.firstName,[Validators.required, Validators.min(3)]],
+            lastName: [user.lastName,[Validators.required, Validators.min(3)]],
+            email: [user.email,[Validators.email, Validators.required]],
+            lawyer: [this.lawyerChose,[Validators.required]],
         });
         this.modalRef.onHide?.subscribe(() => {
             this.userService.findAllUsers().subscribe((result) => {
@@ -296,9 +293,9 @@ export class UsersComponent implements OnInit {
         this.modalData = user;
         this.modalRef = this.modalService.show(template, {});
         this.editLawyerForm = this.formBuilder.group({
-            firstName: [user.firstName],
-            lastName: [user.lastName],
-            email: [user.email],
+            firstName: [user.firstName,[Validators.required, Validators.min(3)]],
+            lastName: [user.lastName,[Validators.required, Validators.min(3)]],
+            email: [user.email,[Validators.required, Validators.email]],
         })
         this.modalRef.onHide?.subscribe(() => {
             this.userService.findAllUsers().subscribe((result) => {

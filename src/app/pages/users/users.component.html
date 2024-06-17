@@ -228,16 +228,15 @@
                                                                              *ngFor="let access of accessesHalfTwo">
                                                                             <input class="form-check-input accesses-checks-input"
                                                                                    type="checkbox" role="switch"
-                                                                                   (click)="addAccess(access.id)"
-                                                                                   formControlName="accesses">
+                                                                                   (click)="addAccess(access.id)">
                                                                             <label class="form-check-label"
                                                                                    [ngClass]="'accesses-checks-label'">{{ access.title.toLocaleLowerCase() }}</label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <span *ngIf="(this.submitted == true) && (this.accessesChose.length == 0)  " class="valid-message help-block">
+                                                                <span *ngIf="this.submitted == true && this.accessesChose.length ==  0" class="valid-message help-block">
                                                                          accesses is required!
-                                                                        </span>
+                                                                </span>
                                                             </div>
                                                             <div class="col-12 addAgent-div">
                                                                 <div class="text-end">
@@ -342,6 +341,10 @@
                                                                            id="fullnameInput11"
                                                                            placeholder="Enter first name"
                                                                            formControlName="firstName">
+                                                                    <span *ngIf="(!this.editAgentForm.get(['firstName']).valid && this.editAgentForm.get(['firstName']).touched) || (!this.editAgentForm.get(['firstName']).valid && this.submitted == true)"
+                                                                          class="valid-message help-block">
+                                                                    please enter a valid first name!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="fullnameInput"
@@ -350,6 +353,10 @@
                                                                            id="fullnameInput12"
                                                                            placeholder="Enter last name"
                                                                            formControlName="lastName">
+                                                                    <span *ngIf="(!this.editAgentForm.get(['lastName']).valid && this.editAgentForm.get(['lastName']).touched) || (!this.editAgentForm.get(['lastName']).valid && this.submitted == true)"
+                                                                          class="valid-message help-block">
+                                                                    please enter a valid last name!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="inputEmail4"
@@ -358,6 +365,10 @@
                                                                            id="inputEmail43"
                                                                            placeholder="Enter email"
                                                                            formControlName="email">
+                                                                    <span *ngIf="(!this.editAgentForm.get(['email']).valid && this.editAgentForm.get(['email']).touched) || (!this.editAgentForm.get(['email']).valid && this.submitted == true)"
+                                                                          class="valid-message help-block">
+                                                                    please enter a valid email !
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="inputState"
@@ -371,6 +382,10 @@
                                                                                 [ngClass]="'select'">{{ lawyer.firstName }}
                                                                         </option>
                                                                     </select>
+                                                                    <span *ngIf="(!this.editAgentForm.get(['lawyer']).valid && this.editAgentForm.get(['lawyer']).touched) || (!this.editAgentForm.get(['lawyer']).valid && this.submitted == true)"
+                                                                          class="valid-message help-block">
+                                                                    lawyer is required!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="accesses-div-title">
@@ -400,6 +415,9 @@
                                                                                        [ngClass]="'accesses-checks-label'">{{ access.title.toLocaleLowerCase() }}</label>
                                                                             </div>
                                                                         </div>
+                                                                        <span *ngIf="this.submitted == true && this.accessesChose.length ==  0" class="valid-message help-block">
+                                                                         accesses is required!
+                                                                </span>
                                                                     </div>
                                                                     <!--                                                                    <div class="form-check form-switch"-->
                                                                     <!--                                                                         *ngFor="let access of allAccesses">-->
@@ -455,6 +473,10 @@
                                                                            id="fullnameInput112"
                                                                            placeholder="Enter first name"
                                                                            formControlName="firstName">
+                                                                    <span *ngIf="(!this.editLawyerForm.get(['firstName']).valid && this.editLawyerForm.get(['firstName']).touched) || (!this.editLawyerForm.get(['firstName']).valid && this.submitted == true)"
+                                                                          class="valid-message help-block">
+                                                                    please enter a valid first name!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="fullnameInput"
@@ -463,6 +485,10 @@
                                                                            id="fullnameInput122"
                                                                            placeholder="Enter last name"
                                                                            formControlName="lastName">
+                                                                    <span class="valid-message"
+                                                                          *ngIf="(!this.editLawyerForm.get(['lastName']).valid && this.editLawyerForm.get(['lastName']).touched) || (!this.editLawyerForm.get(['lastName']).valid && this.submitted == true)">
+                                                                    please enter a valid last name!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="inputEmail4"
@@ -471,6 +497,10 @@
                                                                            id="inputEmail433"
                                                                            placeholder="Enter email"
                                                                            formControlName="email">
+                                                                    <span class="valid-message"
+                                                                          *ngIf="(!this.editLawyerForm.get(['email']).valid && this.editLawyerForm.get(['email']).touched) || (!this.editLawyerForm.get(['email']).valid && this.submitted == true)">
+                                                                    please enter a valid email!
+                                                                </span>
                                                                 </div>
                                                                 <div class="col-12 ">
                                                                     <div class="text-end">
